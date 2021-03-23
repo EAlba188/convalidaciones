@@ -20,9 +20,12 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <field name="fecha_convalidacion"/>
-            <field name="modulo_id"/>
-            <field name="alumno_id" />
+            <h1><field name="alumno_id" /></h1>
+            <separator string="Datos" colspan="2"/>
+              <group colspan="2" col="2">
+                <field name="fecha_convalidacion"/>
+                <field name="modulo_id"/>
+              </group>
           </sheet>
         </form>
       </field>

@@ -2,17 +2,47 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="convalidaciones.list_alumnos">
+    <record model="ir.ui.view" id="convalidaciones.list_alumnos_tree">
       <field name="name">Listado</field>
       <field name="model">convalidaciones.alumno</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
           <field name="edad"/>
+          <field name="localidad"/>
+          <field name="provincia"/>
+          <field name="email"/>
+          <field name="convalidacion_ids">
+            <tree string="Convalidaciones del alumno">
+              <field name="modulo_id"/>
+              <field name="alumno_id"/>
+              <field name="fecha_convalidacion"/>
+            </tree>
+          </field>
+
         </tree>
       </field>
     </record>
 
+    <record model="ir.ui.view" id="convalidaciones.list_alumnos_form">
+      <field name="name">convalidaciones.alumno.form</field>
+      <field name="model">convalidaciones.alumno</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1><field name="name"/></h1>
+            <separator string="Datos" colspan="2"/>
+            <group colspan="2" col="2">
+              <field name="edad"/>
+              <field name="localidad"/>
+              <field name="provincia"/>
+              <field name="email"/>
+            </group>
+            <field name="convalidacion_ids"/>
+          </sheet>
+        </form>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
 

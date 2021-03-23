@@ -27,6 +27,7 @@
         'views/alumnos.xml',
         'views/modulos.xml',
         'views/convalidaciones.xml',
+        'views/ciclos.xml',
         'views/templates.xml'
     ],
     # only loaded in demonstration mode
