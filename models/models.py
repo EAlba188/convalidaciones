@@ -14,3 +14,11 @@ class Modulo(models.Model):
 
      name = fields.Char(string="Nombre")
      description = fields.Text(string="Descripcion")
+
+class Convalidacion(models.Model):
+     _name = 'convalidaciones.convalidacion'
+
+     name = fields.Char()
+     fecha_convalidacion = fields.Date(string="Fecha de la convalidacion")
+     modulo_id = fields.Many2one('convalidaciones.modulo', string="Modulo")
+     alumno_id = fields.Many2one('convalidaciones.alumno', string="Alumno")
